@@ -7,11 +7,16 @@
   <body>
     <h1>Simple Login Page</h1>
     <form name="login" id="submitForm">
+      
       Username <input type="text" name="userid"/>
       Password <input type="password" name="password"/>
-      UserToken <input type="text" name="usertoken"/>
+      <div style="margin-top: 10px;">
+        UserToken <textarea rows="10" cols="100" type="text" name="usertoken"></textarea>
+      </div>
+      <div>
       <button id="loginBtn">Login</button>
       <input type="reset" value="Cancel"/>
+    </div>
     </form>
 
     <script nonce="secretkey" language="javascript">
@@ -25,6 +30,7 @@
 
         event.preventDefault();
         var usertoken = form.usertoken.value;
+        console.log(usertoken);
         if(form.userid.value == "something" && form.password.value == "something")
         {
           if(usertoken){
